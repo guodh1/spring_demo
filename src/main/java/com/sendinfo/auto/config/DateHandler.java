@@ -27,6 +27,6 @@ public class DateHandler implements MetaObjectHandler{
     public void updateFill(MetaObject metaObject) {
         System.out.println("添加更新时间");
         this.setFieldValByName("updateTime", new Date(), metaObject);
-        this.setFieldValByName("editor", "guodh", metaObject);
+        this.setFieldValByName("editor", "guodh1", metaObject);
     }
 }
