@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sendinfo.auto.mapper.AutoConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sendinfo.auto.entity.AutoConfig">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="private_key" property="privateKey" />
+        <result column="public_key" property="publicKey" />
+        <result column="env_id" property="envId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        name, id, private_key, public_key, env_id
+    </sql>
+
+</mapper>
