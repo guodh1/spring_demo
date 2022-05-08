@@ -1,14 +1,10 @@
 package com.sendinfo.auto.config;
 
 import org.apache.ibatis.reflection.MetaObject;
-
 import java.util.Date;
-
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 
 @Component
 public class DateHandler implements MetaObjectHandler{
@@ -29,4 +25,5 @@ public class DateHandler implements MetaObjectHandler{
         this.setFieldValByName("updateTime", new Date(), metaObject);
         this.setFieldValByName("editor", "guodh1", metaObject);
     }
+
 }

@@ -12,6 +12,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * <p>
  *  前端控制器
@@ -38,8 +40,13 @@ public class AutoChannelController {
     }
 
     @RequestMapping(value = "add", method = {RequestMethod.POST})
-    public ReturnObject add(@RequestBody AutoChannel autoChannel){
+    public ReturnObject insert(@RequestBody AutoChannel autoChannel){
         return autoChannelService.insertChannel(autoChannel);
+    }
+
+    @RequestMapping(value = "{id}", method = {RequestMethod.PUT})
+    public ReturnObject update(@PathVariable("id") Integer id, @RequestBody AutoChannel autoChannel){
+        return autoChannelService.updateChannel(id, autoChannel);
     }
 }
 

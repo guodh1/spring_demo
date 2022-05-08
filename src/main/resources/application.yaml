@@ -8,6 +8,10 @@ spring:
     password: 123456
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 #配置mybatis
 mybatis:
   mapper-locations: classpath:com/sendinfo/auto/mapper/*.xml
@@ -15,6 +19,7 @@ mybatis:
   configuration:
     # 开启驼峰
     map-underscore-to-camel-case: true
+
 #sql语句日志打印
 logging:
   config: classpath:log.xml

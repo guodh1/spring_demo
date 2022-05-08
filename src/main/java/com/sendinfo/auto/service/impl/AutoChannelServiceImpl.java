@@ -7,6 +7,7 @@ import com.sendinfo.auto.entity.AutoChannelExample;
 import com.sendinfo.auto.mapper.AutoChannelMapper;
 import com.sendinfo.auto.page.PageInfo;
 import com.sendinfo.auto.service.AutoChannelService;
+import com.sendinfo.auto.utils.AssertUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -53,6 +54,29 @@ public class AutoChannelServiceImpl implements AutoChannelService {
         }
         autoChannelMapper.insert(autoChannel);
         returnObject.setMessage("添加渠道成功");
+        return returnObject;
+    }
+
+    @Override
+    public ReturnObject updateChannel(Integer id, AutoChannel autoChannel) {
+        AutoChannelExample autoChannelExample = new AutoChannelExample();
+        AutoChannelExample.Criteria criteria = autoChannelExample.createCriteria();
+        criteria.andIdEqualTo(id);
+        List<AutoChannel> autoChannels = autoChannelMapper.selectByExample(autoChannelExample);
+        AssertUtil.isTrue(autoChannels.size() >= 1, "更新失败，未查询到渠道信息");
+
+        AutoChannelExample autoChannelExample1 = new AutoChannelExample();
+        criteria = autoChannelExample1.createCriteria();
+        criteria.andNameEqualTo(autoChannel.getName());
+        List<AutoChannel> autoChannels1 = autoChannelMapper.selectByExample(autoChannelExample1);
+        AssertUtil.isTrue(autoChannels1.size() < 1, "更新失败，渠道名称已存在");
+
+        ReturnObject returnObject = new ReturnObject();
+        if (autoChannels.size() > 0){
+            autoChannel.setId(id);
+            autoChannelMapper.updateByPrimaryKey(autoChannel);
+            returnObject.setMessage("更新成功");
+        }
         return returnObject;
     }
 }

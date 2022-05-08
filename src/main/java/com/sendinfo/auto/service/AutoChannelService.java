@@ -17,5 +17,6 @@ public interface AutoChannelService{
 
     ReturnObject findByAllWithPage(int pageNum, int pageSize, String order);
     ReturnObject insertChannel(AutoChannel autoChannel);
+    ReturnObject updateChannel(Integer id, AutoChannel autoChannel);
 
 }
