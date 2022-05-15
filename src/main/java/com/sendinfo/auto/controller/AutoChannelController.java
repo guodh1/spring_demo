@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 /**
  * <p>
@@ -34,19 +35,26 @@ public class AutoChannelController {
 
     @GetMapping("")
     @ApiOperation("项目列表")
-    public ReturnObject list(@Param(value = "pageNum") int pageNum, @Param(value = "pageSize") int pageSize,
-                             @Param(value = "order") String order){
-        return autoChannelService.findByAllWithPage(pageNum, pageSize, order);
+    public ReturnObject list(AutoChannel autoChannel,
+                             @RequestParam(value = "pageNum") int pageNum,
+                             @RequestParam(value = "pageSize") int pageSize,
+                             @RequestParam(value = "order") String order ){
+        return autoChannelService.findByAllWithPage(pageNum, pageSize, order, autoChannel);
     }
 
     @RequestMapping(value = "add", method = {RequestMethod.POST})
-    public ReturnObject insert(@RequestBody AutoChannel autoChannel){
+    public ReturnObject insert(@RequestBody @Valid AutoChannel autoChannel){
         return autoChannelService.insertChannel(autoChannel);
     }
 
     @RequestMapping(value = "{id}", method = {RequestMethod.PUT})
-    public ReturnObject update(@PathVariable("id") Integer id, @RequestBody AutoChannel autoChannel){
+    public ReturnObject update(@PathVariable("id") Integer id, @RequestBody @Valid AutoChannel autoChannel){
         return autoChannelService.updateChannel(id, autoChannel);
+    }
+
+    @RequestMapping(value = "{id}", method = {RequestMethod.DELETE})
+    public ReturnObject delete(@PathVariable("id") Integer id){
+        return autoChannelService.deleteChannel(id);
     }
 }
 

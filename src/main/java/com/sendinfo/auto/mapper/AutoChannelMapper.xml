@@ -63,17 +63,23 @@
 
     <select id="selectByExample" parameterType="com.sendinfo.auto.entity.AutoChannelExample" resultMap="BaseResultMap">
         select
-        <if test="distinct">
-            distinct
-        </if>
+        id, `name`, create_time, update_time, author, editor
         <include refid="Base_Column_List" />
         from auto_channel
         <if test="_parameter != null">
             <include refid="Example_Where_Clause" />
         </if>
+        where  1=1
+        <if test="keyword.name != null and keyword.name != ''">
+            AND name = #{keyword.name}
+        </if>
+        <if test="keyword.id != null and keyword.id != ''">
+            AND id = #{keyword.id}
+        </if>
         <if test="orderByClause != null">
             order by ${orderByClause}
         </if>
+
     </select>
 
     <!--keyProperty和useGeneratedKeys为了添加数据后可以返回这个自增ID-->
@@ -149,10 +155,15 @@
 
     <update id="updateByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoChannel">
     update auto_channel
-    set author = #{author,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
+    set editor = #{editor,jdbcType=VARCHAR},
+       update_time = #{updateTime,jdbcType=TIMESTAMP},
+      `name` = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoChannel">
+        delete from auto_channel where id = #{id, jdbcType=INTEGER}
+    </delete>
 
 
 </mapper>

@@ -1,13 +1,18 @@
 package com.sendinfo.auto.entity;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Data
 public class AutoChannelExample {
     protected String orderByClause;
 
     protected boolean distinct;
+
+    protected AutoChannel keyword;
 
     protected List<Criteria> oredCriteria;
 

@@ -15,8 +15,9 @@ import com.sendinfo.auto.page.PageInfo;
  */
 public interface AutoChannelService{
 
-    ReturnObject findByAllWithPage(int pageNum, int pageSize, String order);
+    ReturnObject findByAllWithPage(int pageNum, int pageSize, String order, AutoChannel keyword);
     ReturnObject insertChannel(AutoChannel autoChannel);
     ReturnObject updateChannel(Integer id, AutoChannel autoChannel);
+    ReturnObject deleteChannel(Integer id);
 
 }

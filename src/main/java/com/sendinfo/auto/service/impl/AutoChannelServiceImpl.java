@@ -2,6 +2,7 @@ package com.sendinfo.auto.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.sendinfo.auto.common.ReturnObject;
+import com.sendinfo.auto.common.enums.StateCodeEnum;
 import com.sendinfo.auto.entity.AutoChannel;
 import com.sendinfo.auto.entity.AutoChannelExample;
 import com.sendinfo.auto.mapper.AutoChannelMapper;
@@ -28,14 +29,13 @@ public class AutoChannelServiceImpl implements AutoChannelService {
     private AutoChannelMapper autoChannelMapper;
 
     @Override
-    public ReturnObject findByAllWithPage(int pageNum, int pageSize, String order) {
+    public ReturnObject findByAllWithPage(int pageNum, int pageSize, String order, AutoChannel keyword) {
         AutoChannelExample autoChannelExample = new AutoChannelExample();
         autoChannelExample.setOrderByClause(order);
+        autoChannelExample.setKeyword(keyword);
         PageHelper.startPage(pageNum, pageSize);
         PageInfo<AutoChannel> pageInfo = new PageInfo<>(autoChannelMapper.selectByExample(autoChannelExample));
-        ReturnObject returnObject = new ReturnObject(pageInfo);
-        returnObject.setMessage("查询成功");
-        return returnObject;
+        return ReturnObject.getSuccessBuilder(pageInfo).build();
     }
 
     @Override
@@ -47,14 +47,13 @@ public class AutoChannelServiceImpl implements AutoChannelService {
         criteria.andNameEqualTo(autoChannel.getName());
         // 添加完条件后去数据库查询是否已存在渠道
         List<AutoChannel> autoChannels = autoChannelMapper.selectByExample(autoChannelExample);
-        ReturnObject returnObject = new ReturnObject();
+
         if (autoChannels.size() > 0){
-            returnObject.setMessage("渠道信息已存在");
-            return returnObject;
+            return ReturnObject.getFailBuilder("渠道信息已存在").build();
         }
         autoChannelMapper.insert(autoChannel);
-        returnObject.setMessage("添加渠道成功");
-        return returnObject;
+        return ReturnObject.getSuccessBuilder("添加渠道成功").build();
+
     }
 
     @Override
@@ -71,12 +70,20 @@ public class AutoChannelServiceImpl implements AutoChannelService {
         List<AutoChannel> autoChannels1 = autoChannelMapper.selectByExample(autoChannelExample1);
         AssertUtil.isTrue(autoChannels1.size() < 1, "更新失败，渠道名称已存在");
 
-        ReturnObject returnObject = new ReturnObject();
         if (autoChannels.size() > 0){
             autoChannel.setId(id);
             autoChannelMapper.updateByPrimaryKey(autoChannel);
-            returnObject.setMessage("更新成功");
         }
-        return returnObject;
+        return ReturnObject.getSuccessBuilder("更新成功").build();
+    }
+
+    @Override
+    public ReturnObject deleteChannel(Integer id) {
+
+        AutoChannelExample autoChannelExample= new AutoChannelExample();
+        AutoChannelExample.Criteria criteria = autoChannelExample.createCriteria();
+        criteria.andIdEqualTo(id);
+        autoChannelMapper.deleteByPrimaryKey(id);
+        return ReturnObject.getSuccessBuilder("删除成功").build();
     }
 }

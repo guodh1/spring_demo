@@ -4,7 +4,7 @@ server:
 #数据源配置
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/auto_paycenter?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/auto_paycenter?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
     password: 123456
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
