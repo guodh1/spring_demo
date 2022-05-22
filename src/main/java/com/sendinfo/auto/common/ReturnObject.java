@@ -18,7 +18,7 @@ public class ReturnObject implements Serializable {
 
 
     public  static ReturnObject.ReturnObjectBuilder getSuccessBuilder(Object object){
-        // 因为存在@Builder注解，所以ResultWrapper.builder().code(StateCodeEnum.SUCCESS.getCode())返回的还是自己，可以继续进行调用
+        // 因为存在@Builder注解，所以ResultWrapper.builder().code()返回的还是自己，可以继续进行调用
         return ReturnObject.builder()
                 .code(StateCodeEnum.SUCCESS.getCode())
                 .message(null)
@@ -34,17 +34,17 @@ public class ReturnObject implements Serializable {
                 .success(true);
     }
 
-    public static ReturnObject.ReturnObjectBuilder getFailBuilder(String sting){
+    public static ReturnObject.ReturnObjectBuilder getFailBuilder(String sting, int code){
         return ReturnObject.builder()
-                .code(StateCodeEnum.FAIL.getCode())
+                .code(code)
                 .message(sting)
                 .result(null)
                 .success(false);
     }
 
-    public static ReturnObject.ReturnObjectBuilder getFailBuilder(){
+    public static ReturnObject.ReturnObjectBuilder getFailBuilder(int code){
         return ReturnObject.builder()
-                .code(StateCodeEnum.FAIL.getCode())
+                .code(code)
                 .message(null)
                 .result(null)
                 .success(false);

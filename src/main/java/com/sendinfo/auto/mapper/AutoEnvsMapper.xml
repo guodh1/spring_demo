@@ -15,4 +15,42 @@
         id, name, url, type
     </sql>
 
+    <select id="selectEnvList" parameterType="com.sendinfo.auto.entity.AutoEnvs" resultMap="BaseResultMap">
+        select *
+        from  auto_envs
+        where 1=1
+
+        <if test="envs.type != null "> and type = #{envs.type}</if>
+        <if test="envs.name != null  and envs.name != ''"> and `name` like concat('%', #{envs.name}, '%')</if>
+
+    </select>
+
+    <select id="selectByName" resultMap="BaseResultMap">
+        select * from auto_envs where name = #{name}
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select * from auto_envs where id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.sendinfo.auto.entity.AutoEnvs" keyProperty="id" useGeneratedKeys="true">
+        insert into auto_envs (`name`, `type`, url, author, editor, create_time, update_time)
+        values ( #{name,jdbcType=VARCHAR},#{type,jdbcType=SMALLINT},#{url,jdbcType=VARCHAR},#{author,jdbcType=VARCHAR}, #{editor,jdbcType=VARCHAR},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoEnvs">
+        update auto_envs
+        set editor = #{editor,jdbcType=VARCHAR},
+            update_time = #{updateTime,jdbcType=TIMESTAMP},
+            `name` = #{name,jdbcType=VARCHAR},
+            url = #{url,jdbcType=VARCHAR},
+            `type` = #{type,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoEnvs">
+        delete from auto_envs where id = #{id, jdbcType=INTEGER}
+    </delete>
+
 </mapper>

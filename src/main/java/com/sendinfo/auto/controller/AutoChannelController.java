@@ -16,10 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 /**
- * <p>
- *  前端控制器
- * </p>
- *
  * @author 郭东海
  * @since 2022-05-03
  */
@@ -27,14 +23,14 @@ import javax.validation.Valid;
 @CrossOrigin(origins = "*",allowedHeaders = "*",methods = {},allowCredentials = "true")
 @Api(tags = {"渠道管理"})
 @RestController
-@RequestMapping("/channel")
+@RequestMapping("/api/channel")
 public class AutoChannelController {
 
     @Autowired
     AutoChannelService autoChannelService;
 
     @GetMapping("")
-    @ApiOperation("项目列表")
+    @ApiOperation("渠道列表")
     public ReturnObject list(AutoChannel autoChannel,
                              @RequestParam(value = "pageNum") int pageNum,
                              @RequestParam(value = "pageSize") int pageSize,
@@ -42,17 +38,23 @@ public class AutoChannelController {
         return autoChannelService.findByAllWithPage(pageNum, pageSize, order, autoChannel);
     }
 
+    @GetMapping("{id}")
+    @ApiOperation("查询渠道详情")
+    public ReturnObject retrieve(@PathVariable("id") Integer id){
+        return autoChannelService.selectChannelById(id);
+    }
+
     @RequestMapping(value = "add", method = {RequestMethod.POST})
     public ReturnObject insert(@RequestBody @Valid AutoChannel autoChannel){
         return autoChannelService.insertChannel(autoChannel);
     }
 
-    @RequestMapping(value = "{id}", method = {RequestMethod.PUT})
+    @PutMapping(value = "{id}")
     public ReturnObject update(@PathVariable("id") Integer id, @RequestBody @Valid AutoChannel autoChannel){
         return autoChannelService.updateChannel(id, autoChannel);
     }
 
-    @RequestMapping(value = "{id}", method = {RequestMethod.DELETE})
+    @DeleteMapping(value = "{id}")
     public ReturnObject delete(@PathVariable("id") Integer id){
         return autoChannelService.deleteChannel(id);
     }

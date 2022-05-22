@@ -9,11 +9,58 @@
         <result column="private_key" property="privateKey" />
         <result column="public_key" property="publicKey" />
         <result column="env_id" property="envId" />
+        <result column="pay_id" property="payId" />
+        <result column="merchant_id" property="merchantId"/>
     </resultMap>
 
-    <!-- 通用查询结果列 -->
-    <sql id="Base_Column_List">
-        name, id, private_key, public_key, env_id
-    </sql>
+    <select id="selectConfigList" parameterType="com.sendinfo.auto.entity.AutoConfig" resultMap="BaseResultMap">
+        select *
+        from  auto_config
+        where 1=1
+        <if test="config.payId != null "> and type = #{config.payId}</if>
+        <if test="config.merchantId != null "> and type = #{config.merchantId}</if>
+        <if test="config.name != null  and config.name != ''"> and `name` like concat('%', #{config.name}, '%')</if>
+
+    </select>
+
+    <select id="selectByName" resultMap="BaseResultMap">
+        select * from auto_config where name = #{name}
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select * from auto_config where id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.sendinfo.auto.entity.AutoConfig" keyProperty="id" useGeneratedKeys="true">
+        insert into auto_config (`name`, private_key, public_key, pay_id, merchant_id, env_id, author, editor, create_time, update_time)
+        values (#{name,jdbcType=VARCHAR},
+                #{privateKey,jdbcType=VARCHAR},
+                #{publicKey,jdbcType=VARCHAR},
+                #{payId,jdbcType=VARCHAR},
+                #{merchantId,jdbcType=VARCHAR},
+                #{envId,jdbcType=INTEGER},
+                #{author,jdbcType=VARCHAR},
+                #{editor,jdbcType=VARCHAR},
+                #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoConfig">
+        update auto_config
+        set editor = #{editor,jdbcType=VARCHAR},
+            update_time = #{updateTime,jdbcType=TIMESTAMP},
+            `name` = #{name,jdbcType=VARCHAR},
+            private_key = #{privateKey,jdbcType=VARCHAR},
+            public_key = #{publicKey,jdbcType=VARCHAR},
+            pay_id = #{payId,jdbcType=VARCHAR},
+            merchant_id = #{merchantId,jdbcType=VARCHAR},
+            env_id = #{envId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoConfig">
+        delete from auto_config where id = #{id, jdbcType=INTEGER}
+    </delete>
+
 
 </mapper>

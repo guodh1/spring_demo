@@ -6,6 +6,7 @@
 package com.sendinfo.auto.page;
 
 import com.github.pagehelper.Page;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class PageInfo<T> extends PageSerializable<T> {
     private int pageNum;
     private int pageSize;
+    private String order;
     private int size;
     private int startRow;
     private int endRow;
@@ -290,6 +292,18 @@ public class PageInfo<T> extends PageSerializable<T> {
 
     public void setNavigateLastPage(int navigateLastPage) {
         this.navigateLastPage = navigateLastPage;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public String getOrder(){
+        if (StringUtils.isBlank(this.order)) {
+            return null;
+        } else {
+            return this.order.startsWith("-") ? this.order.replaceFirst("-","") + " " + "desc"  : this.order + " " + "asc";
+        }
     }
 
     public String toString() {

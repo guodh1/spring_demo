@@ -30,7 +30,7 @@ public class ValidateHandler extends ResponseEntityExceptionHandler {
             break;
         }
         return new ResponseEntity(ReturnObject.builder()
-                .code(StateCodeEnum.FAIL.getCode())
+                .code(StateCodeEnum.VALIDATE_FAIL.getCode())
                 .message(sb.toString())
                 .success(false)
                 .build() ,

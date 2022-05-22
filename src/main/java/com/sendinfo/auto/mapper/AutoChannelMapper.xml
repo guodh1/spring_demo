@@ -12,7 +12,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, create_time, update_time
+        id, `name`, create_time, update_time
     </sql>
 
     <sql id="Example_Where_Clause">
@@ -69,17 +69,16 @@
         <if test="_parameter != null">
             <include refid="Example_Where_Clause" />
         </if>
-        where  1=1
-        <if test="keyword.name != null and keyword.name != ''">
-            AND name = #{keyword.name}
-        </if>
-        <if test="keyword.id != null and keyword.id != ''">
-            AND id = #{keyword.id}
-        </if>
         <if test="orderByClause != null">
-            order by ${orderByClause}
+            order by ${orderByClause} desc
         </if>
+    </select>
 
+    <select id="selectChannelById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+            *
+        from auto_channel
+        where id = #{id,jdbcType=INTEGER}
     </select>
 
     <!--keyProperty和useGeneratedKeys为了添加数据后可以返回这个自增ID-->

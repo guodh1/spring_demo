@@ -19,7 +19,7 @@ public interface AutoChannelMapper extends BaseMapper<AutoChannel> {
 
     List<AutoChannel> selectByExample(AutoChannelExample example);
 
-    AutoChannel selectByPrimaryKey(Integer id);
+    AutoChannel selectChannelById(Integer id);
 
     int update(@Param("record") AutoChannel record, @Param("example") AutoChannelExample example);
 

@@ -15,10 +15,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * <p>
- *  服务实现类
- * </p>
- *
  * @author 郭东海
  * @since 2022-05-03
  */
@@ -32,10 +28,14 @@ public class AutoChannelServiceImpl implements AutoChannelService {
     public ReturnObject findByAllWithPage(int pageNum, int pageSize, String order, AutoChannel keyword) {
         AutoChannelExample autoChannelExample = new AutoChannelExample();
         autoChannelExample.setOrderByClause(order);
-        autoChannelExample.setKeyword(keyword);
         PageHelper.startPage(pageNum, pageSize);
         PageInfo<AutoChannel> pageInfo = new PageInfo<>(autoChannelMapper.selectByExample(autoChannelExample));
         return ReturnObject.getSuccessBuilder(pageInfo).build();
+    }
+
+    @Override
+    public ReturnObject selectChannelById(Integer id) {
+        return ReturnObject.getSuccessBuilder(autoChannelMapper.selectChannelById(id)).build();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AutoChannelServiceImpl implements AutoChannelService {
         List<AutoChannel> autoChannels = autoChannelMapper.selectByExample(autoChannelExample);
 
         if (autoChannels.size() > 0){
-            return ReturnObject.getFailBuilder("渠道信息已存在").build();
+            return ReturnObject.getFailBuilder("渠道信息已存在", StateCodeEnum.DATA_REPEAT.getCode()).build();
         }
         autoChannelMapper.insert(autoChannel);
         return ReturnObject.getSuccessBuilder("添加渠道成功").build();
@@ -70,10 +70,8 @@ public class AutoChannelServiceImpl implements AutoChannelService {
         List<AutoChannel> autoChannels1 = autoChannelMapper.selectByExample(autoChannelExample1);
         AssertUtil.isTrue(autoChannels1.size() < 1, "更新失败，渠道名称已存在");
 
-        if (autoChannels.size() > 0){
-            autoChannel.setId(id);
-            autoChannelMapper.updateByPrimaryKey(autoChannel);
-        }
+        autoChannel.setId(id);
+        autoChannelMapper.updateByPrimaryKey(autoChannel);
         return ReturnObject.getSuccessBuilder("更新成功").build();
     }
 
