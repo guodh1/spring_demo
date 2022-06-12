@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f62b6a2d-06a7-4552-bc68-99fc2c3ff2b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/common/BaseModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/common/ReturnObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/common/enums/StateCodeEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/config/DateHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/config/ValidateHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AuthUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AutoCaseChannelItemController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AutoCasesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AutoChannelController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AutoConfigController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AutoEnvsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/controller/AutoParamsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AuthUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoCaseChannelItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoCases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoChannel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoChannelExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoEnvs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/entity/AutoParams.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AuthUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AuthUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoCaseChannelItemMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoCaseChannelItemMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoCasesMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoCasesMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoChannelMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoChannelMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoConfigMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoConfigMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoEnvsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoEnvsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoParamsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/mapper/AutoParamsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/page/PageInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/page/PageSerializable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AuthUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AutoCaseChannelItemService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AutoCasesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AutoChannelService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AutoConfigService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AutoEnvsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/AutoParamsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AuthUserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AutoCaseChannelItemServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AutoCasesServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AutoChannelServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AutoConfigServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AutoEnvsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/service/impl/AutoParamsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/utils/AssertUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/utils/BusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/utils/ExceptionAdvice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/utils/FastJsonHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/utils/Generator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sendinfo/auto/utils/XmlJsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/validata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_auto_pay.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\m1\test" />
+        <option name="mavenHome" value="D:\IDEA\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28bdFTOfrVguevQTO1u42M0hEWW" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\test_paycenter\src\main\java\com\sendinfo\auto\mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sendinfo.auto.Application" />
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sendinfo.auto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sendinfo.auto.utils.Generator" />
+      <module name="test_auto_pay" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sendinfo.auto.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="test_auto_pay" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sendinfo.auto.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="Application.Generator" />
+      <item itemvalue="Spring Boot.Application" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.Generator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f62b6a2d-06a7-4552-bc68-99fc2c3ff2b6" name="Default Changelist" comment="" />
+      <created>1651489116555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651489116555</updated>
+      <workItem from="1651489117823" duration="48961000" />
+      <workItem from="1651985100600" duration="12466000" />
+      <workItem from="1652535780828" duration="6880000" />
+      <workItem from="1652580530710" duration="67000" />
+      <workItem from="1652580623496" duration="9532000" />
+      <workItem from="1653102655235" duration="14089000" />
+      <workItem from="1654431991431" duration="461000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1654432452358">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1654432452358" />
+    <state x="812" y="336" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1652582736184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="812" y="336" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1652582736184" />
+    <state x="667" y="212" width="629" height="590" key="#com.intellij.ide.util.MemberChooser" timestamp="1653135178652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="212" width="629" height="590" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1653135178652" />
+    <state x="736" y="386" width="447" height="274" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1651558753744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="386" width="447" height="274" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1651558753744" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1653103060156">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653103060156" />
+    <state x="497" y="443" width="1200" height="597" key="#xdebugger.evaluate" timestamp="1653146435835">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="497" y="443" width="1200" height="597" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1653146435835" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1652539458361">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1652539458361" />
+    <state width="1683" height="431" key="GridCell.Tab.0.bottom" timestamp="1654432454721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="431" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1654432454721" />
+    <state width="1683" height="431" key="GridCell.Tab.0.center" timestamp="1654432454721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="431" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1654432454721" />
+    <state width="1683" height="431" key="GridCell.Tab.0.left" timestamp="1654432454721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="431" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1654432454721" />
+    <state width="1683" height="431" key="GridCell.Tab.0.right" timestamp="1654432454721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="431" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1654432454721" />
+    <state width="1683" height="337" key="GridCell.Tab.1.bottom" timestamp="1653222189333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="337" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653222189333" />
+    <state width="1683" height="337" key="GridCell.Tab.1.center" timestamp="1653222189333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="337" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653222189333" />
+    <state width="1683" height="337" key="GridCell.Tab.1.left" timestamp="1653222189333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="337" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653222189333" />
+    <state width="1683" height="337" key="GridCell.Tab.1.right" timestamp="1653222189333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1683" height="337" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653222189333" />
+    <state x="715" y="294" key="Maven.ArtifactSearchDialog" timestamp="1651996166488">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="294" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1651996166488" />
+    <state x="407" y="184" key="SettingsEditor" timestamp="1651583451096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="407" y="184" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1651583451096" />
+    <state x="941" y="304" key="chooseDestDirectoryDialog" timestamp="1651495029433">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="941" y="304" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1651495029433" />
+    <state x="631" y="416" width="598" height="536" key="find.popup" timestamp="1652014448670">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="631" y="416" width="598" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1652014448670" />
+    <state x="653" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1653142729362">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="653" y="224" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1653142729362" />
+  </component>
+</project>

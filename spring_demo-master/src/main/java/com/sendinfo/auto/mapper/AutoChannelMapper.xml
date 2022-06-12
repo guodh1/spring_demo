@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sendinfo.auto.mapper.AutoChannelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sendinfo.auto.entity.AutoChannel">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, `name`, create_time, update_time
+    </sql>
+
+    <sql id="Example_Where_Clause">
+        <where>
+            <!--foreach是对集合进行遍历
+                collection="oredCriteria"  指定要遍历的集合
+                close="" 表示以什么结束
+                index="" 给定一个索引值
+                item=""  遍历的每一个元素的值
+                open=""  表示以什么开始
+                separator="" 表示多个元素的分隔符
+                -->
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <!--
+                       trim截取字符串：
+                       prefix：前缀，为sql整体添加一个前缀
+                       prefixOverrides:去除整体字符串前面多余的字符
+                       suffixOverrides:去除后面多余的字符串
+                       -->
+
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <!--当我们不想使用所有的条件，而只是想从多个条件中选择一个使用choose -->
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+
+    <select id="selectByExample" parameterType="com.sendinfo.auto.entity.AutoChannelExample" resultMap="BaseResultMap">
+        select
+        id, `name`, channel_product_code, pay_product_code, create_time, update_time, author, editor,
+        <include refid="Base_Column_List" />
+        from auto_channel
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+
+        <if test="orderByClause != null">
+            order by ${orderByClause} desc
+        </if>
+    </select>
+
+    <select id="selectChannelById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+            *
+        from auto_channel
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!--keyProperty和useGeneratedKeys为了添加数据后可以返回这个自增ID-->
+    <insert id="insert" parameterType="com.sendinfo.auto.entity.AutoChannelExample" keyProperty="id" useGeneratedKeys="true">
+    insert into auto_channel (id, author, editor,
+      create_time, update_time, `name`, channel_product_code, pay_product_code)
+    values (#{id,jdbcType=INTEGER}, #{author,jdbcType=VARCHAR}, #{editor,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{name,jdbcType=VARCHAR},
+      #{channelProductCode,jdbcType=VARCHAR} , #{payProductCode,jdbcType=VARCHAR})
+  </insert>
+
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+
+    <update id="update" parameterType="map">
+        update auto_channel
+        -- set元素可以用于动态包含需要更新的列，忽略其它不更新的列。
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.author != null">
+                author = #{record.author,jdbcType=VARCHAR},
+            </if>
+            <if test="record.createTime != null">
+                create_time = #{record.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.name != null">
+                `name` = #{record.name,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+
+    <update id="updateByExample" parameterType="map">
+        update auto_channel
+        set
+        author = #{record.author,jdbcType=VARCHAR},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+        `name` = #{record.name,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoChannel">
+    update auto_channel
+    set editor = #{editor,jdbcType=VARCHAR},
+       update_time = #{updateTime,jdbcType=TIMESTAMP},
+      `name` = #{name,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.sendinfo.auto.entity.AutoChannel">
+        delete from auto_channel where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+
+</mapper>
